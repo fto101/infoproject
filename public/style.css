@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #0b87ff;
+  background-color: #021024; /* Main dark blue */
 }
 
 .container {
@@ -19,7 +19,7 @@ body {
 
 #new-task {
   position: relative;
-  background-color: #ffffff;
+  background-color: #C1E8FF; /* Light blue */
   padding: 1.8em 1.25em;
   border-radius: 0.3em;
   box-shadow: 0 1.25em 1.8em rgba(1, 24, 48, 0.15);
@@ -32,15 +32,15 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 1em;
   border: none;
-  border-bottom: 2px solid #d1d3d4;
+  border-bottom: 2px solid #7DA0CA; /* Secondary light blue */
   padding: 0.8em 0.5em;
-  color: #111111;
+  color: #021024; /* Main dark blue */
   font-weight: 500;
 }
 
 #new-task input:focus {
   outline: none;
-  border-color: #0b87ff;
+  border-color: #052659; /* Main darker blue */
 }
 
 #new-task select {
@@ -48,7 +48,7 @@ body {
   font-size: 1em;
   border: none;
   padding: 0.8em 0.5em;
-  color: #111111;
+  color: #021024; /* Main dark blue */
   font-weight: 500;
 }
 
@@ -56,8 +56,8 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 1em;
-  background-color: #0b87ff;
-  color: #ffffff;
+  background-color: #052659; /* Main darker blue */
+  color: #C1E8FF; /* Light blue */
   outline: none;
   border: none;
   border-radius: 0.3em;
@@ -65,7 +65,7 @@ body {
 }
 
 #tasks {
-  background-color: #ffffff;
+  background-color: #C1E8FF; /* Light blue */
   position: relative;
   padding: 1.8em 1.25em;
   margin-top: 3.8em;
@@ -75,12 +75,12 @@ body {
 }
 
 .task {
-  background-color: #ffffff;
+  background-color: #C1E8FF; /* Light blue */
   padding: 0.3em 0.6em;
   margin-top: 0.6em;
   display: flex;
   align-items: center;
-  border-bottom: 2px solid #d1d3d4;
+  border-bottom: 2px solid #7DA0CA; /* Secondary light blue */
   cursor: pointer;
 }
 
@@ -91,7 +91,7 @@ body {
 }
 
 .task button {
-  color: #ffffff;
+  color: #C1E8FF; /* Light blue */
   padding: 0.8em 0;
   width: 2.8em;
   border-radius: 0.3em;
@@ -101,11 +101,11 @@ body {
 }
 
 .delete {
-  background-color: #fb3b3b;
+  background-color: #fb3b3b; /* Red */
 }
 
 .edit {
-  background-color: #0b87ff;
+  background-color: #021024; /* Main dark blue */
   margin-left: auto;
   margin-right: 3em;
 }
@@ -126,6 +126,43 @@ body {
   font-size: 1em;
   border: none;
   padding: 0.5em;
-  color: #111111;
+  color: #021024; /* Main dark blue */
   font-weight: 500;
+}
+
+.top-bar {
+  background-color: #021024; /* Main dark blue */
+  color: #C1E8FF; /* Light blue */
+  padding: 1em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.title {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.logout-btn {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 1em;
+  background-color: #fb3b3b; /* Red */
+  color: #C1E8FF; /* Light blue */
+  outline: none;
+  border: none;
+  border-radius: 0.3em;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: #ff5252; /* Lighter red */
 }

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #021024; /* Main dark blue */
+    }
+    .container {
+      max-width: 400px;
+      margin: 100px auto;
+      padding: 20px;
+      background-color: #ffffff; /* White */
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #ffffff; /* White */
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: #021024; /* Main dark blue */
+    }
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #C1E8FF; /* Light blue */
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #052659; /* Main darker blue */
+      color: #ffffff; /* White */
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #021024; /* Main dark blue */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Login</h2>
+    <form id="login-form">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+  <script type="module">
+    import { signInUser } from './auth.js';
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+      if (email && password) {
+        loginUser(email, password);
+      } else {
+        alert('Please fill in all fields.');
+      }
+    });
+
+    function loginUser(email, password) {
+      signInUser(email, password)
+        .then(user => {
+          window.location.href = 'todo.html';
+          console.log("User logged in:", user);
+        })
+        .catch(error => {
+          console.error("Login error:", error);
+          alert('Login failed. Please check your credentials and try again.');
+        });
+    }
+  </script>
+</body>
+</html>

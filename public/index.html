@@ -3,71 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign Up</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Simple Webpage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    .button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+  <script type="module" src="firebaseConfig.js"></script>
 </head>
 <body>
-  <div class="container">
-    <h2>Sign Up</h2>
-    <form id="signup-form">
-      <div class="form-group">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-      </div>
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-      <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-      </div>
-      <button type="submit">Sign Up</button>
-    </form>
-    <p id="message"></p>
+  <div class="container" id="main-container">
+    <h1>Welcome!</h1>
+    <p>FanTech To-Do List</p>
+    <div>
+      <a class="button" href="signup.html">Sign Up</a>
+      <a class="button" href="login.html">Login</a>
+    </div>
   </div>
-  <script src="firebaseConfig.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.5.0/firebase-firestore.js"></script>
-  <script>
-   
-  
-
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-
-    document.getElementById("signup-form").addEventListener("submit", function(event) {
-      event.preventDefault();
-      var username = document.getElementById("username").value;
-      var email = document.getElementById("email").value;
-      var password = document.getElementById("password").value;
-
-      firebase.auth().createUserWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-          // Signed up successfully
-          var user = userCredential.user;
-          // Store additional information in Firestore
-          firebase.firestore().collection("users").doc(user.uid).set({
-            username: username,
-            email: email
-            // You can add more fields here if needed
-          })
-          .then(() => {
-            console.log("User data stored successfully");
-            document.getElementById("message").innerHTML = "Sign up successful!";
-          })
-          .catch((error) => {
-            console.error("Error storing user data:", error);
-            document.getElementById("message").innerHTML = "Error signing up. Please try again.";
-          });
-        })
-        .catch((error) => {
-          // Handle errors here
-          var errorMessage = error.message;
-          console.error("Error:", errorMessage);
-          document.getElementById("message").innerHTML = errorMessage;
-        });
-    });
-  </script>
 </body>
 </html>

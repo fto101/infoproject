@@ -6,8 +6,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <script type="module" src="auth.js"></script>
 </head>
 <body>
+  <div class="top-bar">
+    <h1 class="title">TO-DO LIST</h1>
+    <button id="logout-btn" class="logout-btn" onclick="signOut()">Logout</button>
+  </div>
   <div class="container">
     <div id="new-task">
       <input type="text" id="task-input" placeholder="Enter The Task Here..." />
@@ -35,6 +40,14 @@
       </select>
     </div>
   </div>
-  <script src="script.js"></script>
+  <script type="module" src="script.js"></script>
+  <script type="module">
+    import { onAuthStateChanged } from "./auth.js";
+    onAuthStateChanged(user => {
+      if (!user) {
+        window.location.href = "login.html";
+      }
+    });
+  </script>
 </body>
 </html>
