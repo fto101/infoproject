@@ -159,31 +159,24 @@ function rotateBackgroundImage() {
   document.body.style.backgroundSize = 'cover';
   document.body.style.backgroundPosition = 'center';
 
-  // Increment the index to show the next image in the array
   currentIndex = (currentIndex + 1) % images.length;
 }
 
-// Preload all images before starting the background rotation
 preloadImages(images).then(() => {
   console.log('All images have been preloaded.');
 
-  // Initial call to rotateBackgroundImage function
   rotateBackgroundImage();
 
-  // Set interval to rotate background image every 2 minutes (120000 milliseconds)
-  setInterval(rotateBackgroundImage, 12000); // 120000 milliseconds = 2 minutes
+  setInterval(rotateBackgroundImage, 12000);
 }).catch(error => {
   console.error('Error preloading images:', error);
 });
 
-
 const tooltip = document.querySelector('.tooltip');
 const tooltipText = document.querySelector('#tooltiptext');
 
-// Function to toggle tooltip visibility
 function toggleTooltip() {
   tooltipText.style.display = (tooltipText.style.display === 'block') ? 'none' : 'block';
 }
 
-// Add click event listener to toggle tooltip visibility
 tooltip.addEventListener('click', toggleTooltip);

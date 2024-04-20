@@ -27,7 +27,7 @@ body {
 
 #new-task {
   position: relative;
-  background-color: #C1E8FF; /* Light blue */
+  background-color: #C1E8FF;
   padding: 1.8em 1.25em;
   border-radius: 0.3em;
   box-shadow: 0 1.25em 1.8em rgba(1, 24, 48, 0.15);
@@ -40,15 +40,15 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 1em;
   border: none;
-  border-bottom: 2px solid #7DA0CA; /* Secondary light blue */
+  border-bottom: 2px solid #7DA0CA;
   padding: 0.8em 0.5em;
-  color: #021024; /* Main dark blue */
+  color: #021024;
   font-weight: 500;
 }
 
 #new-task input:focus {
   outline: none;
-  border-color: #052659; /* Main darker blue */
+  border-color: #052659;
 }
 
 #new-task select {
@@ -56,7 +56,7 @@ body {
   font-size: 1em;
   border: none;
   padding: 0.8em 0.5em;
-  color: #021024; /* Main dark blue */
+  color: #021024;
   font-weight: 500;
 }
 
@@ -64,8 +64,8 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 1em;
-  background-color: #052659; /* Main darker blue */
-  color: #C1E8FF; /* Light blue */
+  background-color: #052659;
+  color: #C1E8FF;
   outline: none;
   border: none;
   border-radius: 0.3em;
@@ -73,7 +73,7 @@ body {
 }
 
 #tasks {
-  background-color: #C1E8FF; /* Light blue */
+  background-color: #C1E8FF;
   position: relative;
   padding: 1.8em 1.25em;
   margin-top: 3.8em;
@@ -83,12 +83,12 @@ body {
 }
 
 .task {
-  background-color: #C1E8FF; /* Light blue */
+  background-color: #C1E8FF;
   padding: 0.3em 0.6em;
   margin-top: 0.6em;
   display: flex;
   align-items: center;
-  border-bottom: 2px solid #7DA0CA; /* Secondary light blue */
+  border-bottom: 2px solid #7DA0CA;
   cursor: pointer;
 }
 
@@ -99,7 +99,7 @@ body {
 }
 
 .task button {
-  color: #C1E8FF; /* Light blue */
+  color: #C1E8FF;
   padding: 0.8em 0;
   width: 2.8em;
   border-radius: 0.3em;
@@ -109,11 +109,11 @@ body {
 }
 
 .delete {
-  background-color: #fb3b3b; /* Red */
+  background-color: #fb3b3b;
 }
 
 .edit {
-  background-color: #021024; /* Main dark blue */
+  background-color: #021024;
   margin-left: auto;
   margin-right: 3em;
 }
@@ -122,10 +122,9 @@ body {
   text-decoration: line-through;
 }
 
-/* Additional CSS for day-selector */
 #day-selector {
   position: absolute;
-  top: 7.5em; /* Adjust as needed */
+  top: 7.5em;
   right: 0em;
 }
 
@@ -134,13 +133,13 @@ body {
   font-size: 1em;
   border: none;
   padding: 0.5em;
-  color: #021024; /* Main dark blue */
+  color: #021024;
   font-weight: 500;
 }
 
 .top-bar {
-  background-color: #021024; /* Main dark blue */
-  color: #C1E8FF; /* Light blue */
+  background-color: #021024;
+  color: #C1E8FF;
   padding: 1em;
   position: fixed;
   top: 0;
@@ -161,8 +160,8 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 1em;
-  background-color: #fb3b3b; /* Red */
-  color: #C1E8FF; /* Light blue */
+  background-color: #fb3b3b;
+  color: #C1E8FF;
   outline: none;
   border: none;
   border-radius: 0.3em;
@@ -172,19 +171,19 @@ body {
 }
 
 .logout-btn:hover {
-  background-color: #ff5252; /* Lighter red */
+  background-color: #ff5252;
 }
 
 .footer-text {
   position: fixed;
   bottom: 10px;
   right: 10px;
-  color:black; /* Grey color for the text */
+  color: black;
   font-size: 20px;
-  text-shadow: 2px 2px 10px #fff; /* White outline using text-shadow */
- }
+  text-shadow: 2px 2px 10px #fff;
+}
 
-/* Tooltip text */
+
 #tooltiptext {
   display: none;
   width: 200px;
@@ -202,7 +201,7 @@ body {
   transition: opacity 0.3s;
 }
 
-/* Tooltip text shown on hover */
+
 .tooltip:hover + #tooltiptext {
   display: block;
   opacity: 1;
