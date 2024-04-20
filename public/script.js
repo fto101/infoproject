@@ -121,3 +121,69 @@ document.querySelector("#push").addEventListener("click", async () => {
     alert("Failed to add task");
   }
 });
+
+const images = [
+  'earlyMorn.png',
+  'earlyMorning.png',
+  'sunCloud.png',
+  'sunny.png',
+  'afternoon.png',
+  'dusk.png',
+  'purpleSky.png',
+  'lateEvening.png',
+  'evening.png',
+  'night.jpg',
+  'nightSky.jpg',
+  'rain.jpg',
+  'overcast.png'
+];
+
+let currentIndex = 0;
+
+function preloadImages(urls) {
+  const promises = [];
+  urls.forEach(url => {
+    const img = new Image();
+    const promise = new Promise((resolve, reject) => {
+      img.onload = resolve;
+      img.onerror = reject;
+    });
+    img.src = url;
+    promises.push(promise);
+  });
+  return Promise.all(promises);
+}
+
+function rotateBackgroundImage() {
+  document.body.style.backgroundImage = `url(${images[currentIndex]})`;
+  document.body.style.backgroundSize = 'cover';
+  document.body.style.backgroundPosition = 'center';
+
+  // Increment the index to show the next image in the array
+  currentIndex = (currentIndex + 1) % images.length;
+}
+
+// Preload all images before starting the background rotation
+preloadImages(images).then(() => {
+  console.log('All images have been preloaded.');
+
+  // Initial call to rotateBackgroundImage function
+  rotateBackgroundImage();
+
+  // Set interval to rotate background image every 2 minutes (120000 milliseconds)
+  setInterval(rotateBackgroundImage, 12000); // 120000 milliseconds = 2 minutes
+}).catch(error => {
+  console.error('Error preloading images:', error);
+});
+
+
+const tooltip = document.querySelector('.tooltip');
+const tooltipText = document.querySelector('#tooltiptext');
+
+// Function to toggle tooltip visibility
+function toggleTooltip() {
+  tooltipText.style.display = (tooltipText.style.display === 'block') ? 'none' : 'block';
+}
+
+// Add click event listener to toggle tooltip visibility
+tooltip.addEventListener('click', toggleTooltip);
